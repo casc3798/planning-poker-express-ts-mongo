@@ -7,6 +7,11 @@ dotenv.config({ path: `${__dirname}/../.${process.env.NODE_ENV}.env` });
 import "./config/environment";
 
 /**
+ * Database connection
+ */
+import "./database/connection/database";
+
+/**
  * Required External Modules
  */
 
