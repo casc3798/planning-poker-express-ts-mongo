@@ -1,0 +1,17 @@
+version: "3"
+services:
+  express-template-api:
+    container_name: express-template-api
+    restart: on-failure
+    build:
+      context: .
+      args:
+        - NODE_ENV=dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    command: npm run dev
+volumes:
+  postgresql:
