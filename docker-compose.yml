@@ -1,7 +1,7 @@
 version: "3"
 services:
   express-template-api:
-    container_name: express-template-api
+    container_name: planning-poker-be
     restart: on-failure
     build:
       context: .
@@ -13,5 +13,21 @@ services:
       - ./:/app
       - /app/node_modules
     command: npm run dev
+    depends_on:
+      - pp-mongodb
+    
+  pp-mongodb:
+    container_name: pp-mongodb
+    image: public.ecr.aws/bitnami/mongodb:latest
+    restart: on-failure
+    ports:
+      - "27017:27017"
+    environment:
+      MONGODB_ROOT_PASSWORD: "password123"
+      MONGODB_USERNAME: "myuser"
+      MONGODB_PASSWORD: "password123"
+      MONGODB_DATABASE: "planning_poker"
+    volumes:
+      - mongodb-pp:/bitnami/mongodb
 volumes:
-  postgresql:
+  mongodb-pp:
