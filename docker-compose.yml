@@ -1,6 +1,6 @@
 version: "3"
 services:
-  express-template-api:
+  planning-poker-be:
     container_name: planning-poker-be
     restart: on-failure
     build:
@@ -8,7 +8,7 @@ services:
       args:
         - NODE_ENV=dev
     ports:
-      - "3002:3000"
+      - "3000:3000"
     volumes:
       - ./:/app
       - /app/node_modules
