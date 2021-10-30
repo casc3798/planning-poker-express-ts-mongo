@@ -1,10 +1,10 @@
-import app from "./app";
+import httpServer from "./app";
 const port: number = parseInt(process.env.PORT as string, 10);
 
 /**
  * Server Activation
  */
 
-app.listen(port, () => {
+httpServer.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });

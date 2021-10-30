@@ -6,12 +6,11 @@ const playerSchema = new Schema({
   nickname: { type: String, required: true },
   token: {
     type: String,
-    required: true,
   },
 });
 
 playerSchema.pre("save", function (next) {
-  this.token = generateToken(this.nickname);
+  this.token = generateToken({ nickname: this.nickname });
   next();
 });
 

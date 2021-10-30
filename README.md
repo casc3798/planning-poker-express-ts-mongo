@@ -22,6 +22,8 @@ Navigate to the root of the project and execute the following commands:
 
 `docker-compose build` : This will build the docker image from the Dockerfile definition
 
+`docker-compose up --renew-anon-volumes` : This will run the docker container from the custom image definition and another one from a pre-defined mongodb image
+
 Now you are ready for using the Express TS API, you can do any request to http://localhost:PORT/api/v1/
 
 ## Tests

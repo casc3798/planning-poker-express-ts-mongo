@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Planning Poker</title>
+   </head>
+
+   <body></body>
+      <script src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous"></script>
+
+   <script>
+      var socket = io("http://localhost:3000");
+      socket.on('greeting-from-server', function (message) {
+         document.body.appendChild(
+            document.createTextNode(message.greeting)
+         );
+         socket.emit('greeting-from-client', {
+            greeting: 'Hello Server'
+         });
+      });
+   </script>
+</html>
