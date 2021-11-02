@@ -43,9 +43,7 @@ async function getPlayer(req: Request, res: Response) {
  */
 async function createPlayer(req: Request, res: Response) {
   try {
-    const player = new Player({
-      nickname: req.body.nickname,
-    });
+    const player = new Player(req.body);
     const newPlayer = await player.save();
     return res.status(201).json({ message: "User created", data: newPlayer });
   } catch (err) {

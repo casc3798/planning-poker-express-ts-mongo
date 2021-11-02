@@ -1,6 +1,5 @@
 import { generateToken } from "../../utils/jwt/jwt";
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose, { Schema } from "mongoose";
 
 const playerSchema = new Schema({
   nickname: { type: String, required: true },

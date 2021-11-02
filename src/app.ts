@@ -38,7 +38,11 @@ app.use(
 app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"));
-app.use("/api/v1", [routes.healthCheckRouter, routes.playerRouter]);
+app.use("/api/v1", [
+  routes.healthCheckRouter,
+  routes.playerRouter,
+  routes.roomRouter,
+]);
 
 /**
  * Socket Configuration

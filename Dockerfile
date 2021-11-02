@@ -14,7 +14,7 @@ COPY . .
 
 EXPOSE 3000
 
-RUN npm install --quiet -g knex typescript jest ts-jest ts-node
+RUN npm install --quiet -g typescript jest ts-jest ts-node
 
 RUN if [ $NODE_ENV = "dev" ]; then npm install --quiet -g ts-node-dev; fi
 
